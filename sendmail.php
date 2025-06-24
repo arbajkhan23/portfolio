@@ -1,18 +1,19 @@
 <?php
-// Get form fields
+// ✅ STEP 1: Form fields receive karo (jo HTML form se aata hai)
 $name = $_POST['name'] ?? '';
 $email = $_POST['email'] ?? '';
 $subject = $_POST['subject'] ?? '';
 $message = $_POST['message'] ?? '';
 
-// Set your email
-$to = "yourname@gmail.com"; // ← Change this to your Gmail
+// ✅ STEP 2: Apna Gmail yahan set karo
+$to = "arbajkhan8034@gmail.com"; // <-- Yahan tumhara real email daalo
 
-// Compose email
+// ✅ STEP 3: Email ke headers banaye ja rahe hain
 $headers = "From: $name <$email>\r\n";
 $headers .= "Reply-To: $email\r\n";
 $headers .= "Content-Type: text/html; charset=UTF-8\r\n";
 
+// ✅ STEP 4: Email body — jo tumhe mail mein dikhna chahiye
 $body = "
   <h2>New Contact Message</h2>
   <p><strong>Name:</strong> $name</p>
@@ -21,7 +22,7 @@ $body = "
   <p><strong>Message:</strong><br>$message</p>
 ";
 
-// Send email
+// ✅ STEP 5: Email bhejna
 if (mail($to, $subject, $body, $headers)) {
     echo '<span class="output_message success">Message sent successfully!</span>';
 } else {
