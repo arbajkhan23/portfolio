@@ -2195,7 +2195,7 @@
   document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    emailjs.sendForm('service_uuwls6w', 'template_7v0kzqs', this)
+    emailjs.sendForm('service_uuwls6w', this)
       .then(function() {
         alert('Message sent successfully!');
       }, function(error) {
