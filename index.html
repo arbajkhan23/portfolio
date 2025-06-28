@@ -3,7 +3,7 @@
   <!-- Mirrored from slimhamdi.net/tunis-tailwind/demos/dark.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 31 May 2025 10:05:15 GMT -->
   <head>
     <meta charset="utf-8" />
-    <title>Tunis - Tailwind CSS Personal Portfolio HTML Template</title>
+    <title>Portfolio</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <!-- Template Google Fonts -->
     <link
@@ -2184,22 +2184,21 @@
   <!-- Mirrored from slimhamdi.net/tunis-tailwind/demos/dark.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 31 May 2025 10:05:33 GMT -->
 </html>
 
-<script src="https://cdn.emailjs.com/dist/email.min.js"></script>
-<script>
-  (function(){
-    emailjs.init("HktyT1Ex-UHRDh73W"); // Replace with your EmailJS User ID
-  })();
-</script>
+<!-- ✅ Use only this updated script -->
+<script type="module">
+  import emailjs from 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
 
-<script>
+  emailjs.init("HktyT1Ex-UHRDh73W"); // Your public key
+
   document.getElementById('contact-form').addEventListener('submit', function(e) {
     e.preventDefault();
 
-    emailjs.sendForm('service_uuwls6w', this)
-      .then(function() {
+    emailjs.sendForm('service_uuwls6w', 'template_7v0kzqs', this)
+      .then(() => {
         alert('Message sent successfully!');
-      }, function(error) {
+      }, (error) => {
         alert('Failed to send. Error: ' + JSON.stringify(error));
       });
-  });
+  });
 </script>
+
